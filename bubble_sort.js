@@ -35,7 +35,6 @@ BubbleSort.prototype.sort = function() {
   }
     while (sorted);
     return this.items;
-
 };
 
 var bubbles = new BubbleSort([1, 4, 2, 7, 3, 8, 5, 11, 98, 6, 15, 14, 9, 20]);
