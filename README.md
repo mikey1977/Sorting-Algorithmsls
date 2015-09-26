@@ -1,4 +1,5 @@
 # Sorting-Algorithmsls
+<<<<<<< HEAD
 
 BUBBLE SORT
 
@@ -54,3 +55,5 @@ An O(log n) algorithm that uses recursion to sort an array, and that theoretical
   1.  Choose pivot element
   2.  Rearrange elements smaller than the pivot to the left, larger to the right
   3.  Sort subarrays to left and right of pivot
+=======
+>>>>>>> 398a0377e4a7f2398ae8a9af058ebc0df0a38357
