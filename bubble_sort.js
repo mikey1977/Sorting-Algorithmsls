@@ -1,3 +1,7 @@
+//Sorting achieved by iterating through an array and comparing
+// two adjacent elements at a time, swapping the lower values
+// to one side, and reiterating until the entire array is in order
+
 function BubbleSort(items) {
   this.items = items;
   this.array = [];

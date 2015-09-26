@@ -13,7 +13,7 @@ describe('BubbleSort', function() {
     bubbly.should.have.property('items');
     bubbly.items.should.deep.equal([1, 4, 2, 7, 3, 8, 5])
   });
-  it('should have a property array', function() {
+  it('should have a property "array"', function() {
     bubbly.should.have.property('array');
     bubbly.array.should.deep.equal([]);
   });
@@ -29,17 +29,32 @@ describe('BubbleSort', function() {
   });
 });
 
-describe('MergeSort', function() {
-  var mergy;
-  beforeEach(function() {
-    mergy = new MergeSort([1, 4, 2, 7, 3, 8, 5]);
+describe('mergeSort', function() {
+  it('should be a function', function() {
+    expect(mergeSort).to.be.a('function');
   });
-  it('should be a class', function() {
-    expect(MergeSort).to.be.a('function');
+  it('should sort items in an array from low to high', function() {
+    expect(mergeSort(sample)).to.deep.equal([1, 2, 5, 6, 12, 19, 33, 34, 37, 65, 76, 85, 90, 99]);
+    expect(mergeSort(sample2)).to.deep.equal([1, 2, 3, 21, 21, 44, 45, 56, 88, 101]);
   });
-  it('should have a property items', function() {
-    mergy.should.have.property('items');
-    mergy.items.should.deep.equal([1, 4, 2, 7, 3, 8, 5])
-  })
 });
 
+describe('insertionSort', function() {
+  it('should be a function', function() {
+    expect(insertionSort).to.be.a('function');
+  });
+  it('should sort items in an array from low to high', function() {
+    expect(insertionSort(sample)).to.deep.equal([1, 2, 5, 6, 12, 19, 33, 34, 37, 65, 76, 85, 90, 99]);
+    expect(insertionSort(sample2)).to.deep.equal([1, 2, 3, 21, 21, 44, 45, 56, 88, 101]);
+  });
+});
+
+describe('selectionSort', function() {
+  it('should be a function', function() {
+    expect(selectionSort).to.be.a('function');
+  });
+  it('should sort items in an array from low to high', function() {
+    expect(selectionSort(sample)).to.deep.equal([1, 2, 5, 6, 12, 19, 33, 34, 37, 65, 76, 85, 90, 99]);
+    expect(selectionSort(sample2)).to.deep.equal([1, 2, 3, 21, 21, 44, 45, 56, 88, 101]);
+  });
+});

@@ -14,9 +14,9 @@ An algorithm that sorts an array by comparing two adjacent elements at a time.  
 
 MERGE SORT
 
-An O(log n) sorting algorithm - slower than constant time, but faster than linear time.  Analyzes 10-fold increases in array lengths with linear increases in processing time.  If analysis of 10 elements takes 1 sec, 100 elements would take 2 sec, 1000 elements would take 3 sec, etc.
+An O(log n) sorting algorithm - slower than constant time, but faster than linear time.  Ability to analyze 10-fold increases in array lengths with linear increases in processing time.  If analysis of 10 elements takes 1 sec, 100 elements would take 2 sec, 1000 elements would take 3 sec, etc.
 
-  1.  Split array into two subarrays, each subarray into their own subarrays, and so on until only one or two elements subarrays exist.
+  1.  Split array into two subarrays, each subarray into their own subarrays, and so on until only one element subarrays exist.
   2.  Sort by comparing adjacent subarrays with one another.
   3.  Merge sorted subarrays, until only a single sorted array exists.
 
@@ -27,9 +27,9 @@ Similar to Bubble Sort, but splits an array into sorted and unsorted subarrays, 
 
   1.  Divide unsorted array into sorted and unsorted subarrays.
   2.  Compare an element from the unsorted subarray with the sorted
-  3.  Insert element from unsorted into correct position of sorted from right to left
-        a.  if unsorted is greater than unsorted, insert.
-        b.  if unsorted is less than unsorted:
+  3.  Insert element from unsorted into correct position of sorted
+        a.  if sorted is less than unsorted, insert at end of sorted.
+        b.  if sorted is greater than unsorted:
             1.  save unsorted into memory
             2.  reassign sorted element to unsorted's position
             3.  reassign saved unsorted element to sorted's former position
