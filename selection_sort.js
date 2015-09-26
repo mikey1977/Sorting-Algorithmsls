@@ -6,9 +6,6 @@
 var sample = [5, 6, 2, 99, 65, 76, 34, 1, 19, 85, 90, 33, 37, 12];
 var sample2 = [56, 44, 21, 45, 21, 88, 101, 1, 2, 3];
 
-
-
-
 function selectionSort(array) {
 
   // create reference marker

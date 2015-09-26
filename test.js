@@ -67,4 +67,4 @@ describe('quickSort', function() {
     expect(quickSort(sample)).to.deep.equal([1, 2, 5, 6, 12, 19, 33, 34, 37, 65, 76, 85, 90, 99]);
     expect(quickSort(sample2)).to.deep.equal([1, 2, 3, 21, 21, 44, 45, 56, 88, 101]);
   });
-})
+});

@@ -1,5 +1,5 @@
 function quickSort(arr) {
-  debugger;
+
 //if array is empty
   if (arr.length === 0) {
   return [];
