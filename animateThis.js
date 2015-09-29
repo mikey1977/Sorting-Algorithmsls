@@ -1,7 +1,7 @@
 (function() {
-  var animation_speed = 10;
+  var animation_speed = 100;
   var container = document.getElementById('container');
-  var array = [1, 2, 3, 4, 5, 6, 11, 7, 8, 9, 10];
+  var array = [1, 2, 3, 4, 5, 15, 14, 11, 16, 19, 17, 13, 19, 18, 6, 12, 7, 8, 9, 10];
   var animateUntil = false;
   var frame = 0;
   var animationInterval = null;
@@ -18,7 +18,7 @@
 
     // _drawGraph();
 
-    _drawButton();
+    // _drawButton();
 
     frame++;
 
@@ -32,9 +32,9 @@
   }
 
 
-  function _drawGraph(a) {
+  function _drawGraph(array) {
     //loop through array
-    for (var i = 0; i < a.length; i++) {
+    for (var i = 0; i < array.length; i++) {
       var containerDiv = document.getElementById('container');
       //save div element to rowDiv variable
       var rowDiv = document.createElement('div');
@@ -42,7 +42,7 @@
       //style rows
       rowDiv.style.background = 'green';
       rowDiv.style.height = '25px';
-      rowDiv.style.width = a[i] * 50 + 'px';
+      rowDiv.style.width = array[i] * 50 + 'px';
 
       //append rows to container id in HTML
       containerDiv.appendChild(rowDiv);
@@ -56,15 +56,18 @@
     bubbleButton.appendChild(document.createTextNode('Bubble Sort'));
     document.getElementById('container').appendChild(bubbleButton);
     bubbleButton.addEventListener('click', function() {
-      animationInterval = setInterval(loop, animation_speed);
+      return _sort(array);
+      // animationInterval = setInterval(loop, animation_speed);
     });
   }
 
   function _sort(array) {
-  // do {
+  var sorted;
+  do {
 
     //sorted initialized to false;
-    animatedUntil = true;
+    sorted = false;
+    setInterval(function() {
     for (var i = 0; i < array.length; i++) {
 
       //if current is greater than next is true, enter loop
@@ -80,17 +83,50 @@
         array[i + 1] = temp;
 
         //set sorted to true
-        //continue to loop through until no array are left to sort
-        animatedUntil = false;
+        //continue to loop through until no items are left to sort
+        sorted = true;
+        _clearContainer();
+        _drawGraph(array);
       }
-      _drawGraph(array);
         //updating frame by frame
         // triggerAnim(array);
     }
+  }, 500);
 
-    // while (animatedUntil);
-    return array;
+  } while (sorted);
+    // return array;
 };
+
+//   // do {
+
+//     //sorted initialized to false;
+//     // animatedUntil = true;
+//     for (var i = 0; i < array.length; i++) {
+
+//       //if current is greater than next is true, enter loop
+//       if (array[i] > array[i + 1]) {
+
+//         //save higher value into temp
+//         var temp = array[i];
+
+//         //reassign lower value to first index
+//         array[i] = array[i + 1];
+
+//         //replace next index with saved value
+//         array[i + 1] = temp;
+
+//         //set sorted to true
+//         //continue to loop through until no array are left to sort
+//         // animatedUntil = false;
+//       }
+//       _drawGraph(array);
+//         //updating frame by frame
+//         // triggerAnim(array);
+//     }
+
+//     // while (animatedUntil);
+//     // return array;
+// };
 
 
   function _clearContainer() {
@@ -102,6 +138,7 @@
   function _render() {
 
     _drawGraph(array);
+    // _drawButton();
     // array.forEach(function() {
     //   var block = document.createElement('div');
     //   container.appendChild(block);
