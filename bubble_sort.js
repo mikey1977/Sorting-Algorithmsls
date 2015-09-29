@@ -31,11 +31,19 @@ BubbleSort.prototype.sort = function() {
         //continue to loop through until no items are left to sort
         sorted = true;
       }
+        //updating frame by frame
+        triggerAnim(this.items);
     }
   }
     while (sorted);
     return this.items;
 };
 
-var bubbles = new BubbleSort([1, 4, 2, 7, 3, 8, 5, 11, 98, 6, 15, 14, 9, 20]);
-bubbles.sort();
+// var bubbles = new BubbleSort([1, 4, 2, 7, 3, 8, 5, 11, 98, 6, 15, 14, 9, 20]);
+// bubbles.sort();
+
+function triggerAnim(items) {
+  console.log('animate', items);
+
+  bubbleAnimation(items, true);
+}
